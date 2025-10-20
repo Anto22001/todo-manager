@@ -1,0 +1,33 @@
+.todo-modal form .field{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  gap: 5px;
+}
+
+.todo-modal form .field input{
+  width: 100%;
+}
+
+.todo-title, .todo-description{
+  display: -webkit-box;  
+  -webkit-box-orient: vertical;  
+  -webkit-line-clamp: 2;           
+  overflow: hidden;               
+  text-overflow: ellipsis;        
+  width: 100%;                       
+  height: auto;                    
+  line-height: 1.4;  
+}
+
+.todo-category:not(.field){
+  display: -webkit-box;  
+  -webkit-box-orient: vertical;  
+  -webkit-line-clamp: 1;           
+  overflow: hidden;               
+  text-overflow: ellipsis;        
+  width: 100%;                       
+  height: auto;                    
+  line-height: 1.4; 
+}

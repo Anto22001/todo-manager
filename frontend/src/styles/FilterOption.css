@@ -1,0 +1,79 @@
+.filter-option{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.filter-option button{
+  width: 100%;
+  text-align: left;
+  padding-left: 40px;
+  background-color: transparent;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.filter-option button::before{
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  position: absolute;
+  left: 3px;
+  top: 25%;
+  border: 2px solid black;
+  border-radius: 30px;
+  display: block;
+  transform: scale(1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.filter-option button.squared::before{
+  border-radius: 5px;
+}
+
+.filter-option button::after{
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: green;
+  position: absolute;
+  left: 9px;
+  top: calc(25% + 6px);
+  border-radius: 30px;
+  display: block;
+  transform: scale(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+.filter-option button.squared::after{
+  border-radius: 2px;
+}
+
+.filter-option button:hover{
+  font-weight: bold;
+  color: green;
+}
+
+.filter-option button:hover::before{
+  transform: scale(1.3);
+}
+
+.filter-option button.selected::before{
+  border-color: #276b22;
+}
+
+.filter-option button.selected::after{
+  transform: scale(1);
+}
+
+.filter-option button:hover::after{
+  transform: scale(.8);
+}
+
+.filter-option{
+  border-top: 1px solid white;
+}

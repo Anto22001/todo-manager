@@ -1,0 +1,6 @@
+User-agent: *
+Disallow:
+Allow: /login
+Allow: /home
+Allow: /todos
+Allow: /todo/

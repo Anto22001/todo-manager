@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('src/assets/fonts/NotoSerif.ttf') format('woff2'),
+       url('src/assets/fonts/NotoSerif.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --breakpoint-xs: 380px;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: white;
+  text-decoration: inherit;
+}
+
+li a{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: end;
+  position: relative;
+}
+
+li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+li a:hover::after {
+  transform: scaleX(1);
+}
+
+li img{
+  width: 16px;
+  height: 16px;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  min-width: 320px;
+  font-family: 'NotoSerif', sans-serif;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+label, input{
+  text-align: left;
+  width: 100%;
+}
+
+input[type="text"], input[type="password"], input[type="email"]{
+  border: 1px solid white;
+  border-radius: 10px;
+  height: 30px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  padding: 5px;
+}
+
+input[type="text"]:hover, [type="text"]:focus, [type="password"]:hover, [type="password"]:focus, input[type="email"]:hover, input[type="email"]:focus{
+  background-color: rgba(0,0,0,0.3);
+  border-color: #626aff;
+}
+
+button:focus, button:hover {
+  outline: none;
+  border-color: transparent;
+  transform: scale(1);
+}
+
+button:not(.no-rotate):hover img{
+  transform: rotate(360deg);
+  transition-duration: 1s;
+}
+
+button.no-rotate:hover{
+  transform: scale(1.2);
+  transition: transform 0.6s ease;
+}
+
+button.image-zoom:hover{
+  transform: none;
+}
+
+button.image-zoom:hover img{
+  transform: scale(1.2);
+  transition: transform 0.6s ease;
+}
+
+button:disabled, button:disabled:hover, button:disabled:focus{
+  transform: none;
+}
+
+button:disabled img, button:disabled:hover img, button:disabled:focus img{
+  transform: none;
+}
+
+button:focus img{
+  transform: scale(.8);
+  transition-duration: .3s;
+}
+
+a:hover{
+  transition-duration: .3s;
+}
+
+a:focus{
+  transition-duration: .3s;
+}
+
+.accordion-button:hover h2{
+  font-size: 24px;
+  transition: all 0.3s ease-in-out;
+}

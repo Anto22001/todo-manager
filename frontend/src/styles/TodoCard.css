@@ -1,0 +1,154 @@
+.todo-card_button {
+  padding: 30%;
+  transition: padding 0.3s ease-in-out;
+}
+
+.todo-card_button:hover {
+  padding: 20%;
+}
+
+.todo-title, .todo-description{
+  display: -webkit-box;  
+  -webkit-box-orient: vertical;  
+  -webkit-line-clamp: 2;           
+  overflow: hidden;               
+  text-overflow: ellipsis;        
+  width: 100%;                       
+  height: auto;                    
+  line-height: 1.4;  
+}
+
+.todo-category:not(.field){
+  display: -webkit-box;  
+  -webkit-box-orient: vertical;  
+  -webkit-line-clamp: 1;           
+  overflow: hidden;               
+  text-overflow: ellipsis;        
+  width: 100%;                       
+  height: auto;                    
+  line-height: 1.4; 
+}
+
+.todo-complete{
+  width: 40px;            
+  height: 40px;
+  border-radius: 50%;     
+  background-color: #ddd;
+  border: 2px solid #999;
+  cursor: pointer;    
+  transition: background-color 0.3s, border 0.3s;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1);
+}
+
+.todo-complete::before{
+  content: "";
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;     
+  background-color: transparent;
+  border: 2px solid #276b22;
+  position: absolute;
+  transform: scale(1);
+}
+
+.todo-complete.completed{
+  background-color: #2b632d; 
+  border: 2px solid #1b451d; 
+  position: relative;
+  color: white;
+}
+
+.todo-complete:hover{
+  transform: scale(.8);
+  transition: transform .4s ease-in-out;
+}
+
+.todo-complete:hover::before{
+  transform: scale(1.4);
+  transition: transform .4s ease-in-out;
+}
+
+.todo-complete.completed::before{
+  display: none;
+}
+
+.todo-complete.completed:hover{
+  transform: scale(1.2);
+}
+
+.todo-complete.completed::after {
+  content: '✓';
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.todo-modify_form .field{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.todo-modify_form .field label{
+  font-weight: 800;
+  font-style: italic;
+  text-align: left;
+}
+
+.todo-dropdowns .field{
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.todo-completed_overlay::after{
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  top: -8px;
+  left: -8px;
+  background-color: #22426b;
+  background-image: url("/confirm-white.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: scale(0);
+  transition: transform 0.1s ease-in-out;
+}
+
+.todo-completed_overlay.selected::after{
+  transform: scale(1);
+}
+
+button.loop-animation img{
+  animation: zoom .8s linear infinite alternate, rotate 2s linear infinite;
+}
+
+@keyframes zoom {
+  from { 
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes rotate {
+  from { 
+    rotate: 0;
+  }
+  to {
+    rotate: 360deg;
+  }
+}

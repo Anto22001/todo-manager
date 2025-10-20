@@ -1,0 +1,67 @@
+.analytics-chart g, .fc-event-main{
+  cursor: pointer;
+}
+
+.fc-daygrid-day-number {
+  color: white !important;
+}
+
+.fc-col-header-cell-cushion {
+  color: white !important;
+}
+
+.analytic-next_field, .analytic-next_header{
+  border: 1.5px solid white;
+  overflow: hidden;
+  display: -webkit-box;  
+  -webkit-box-orient: vertical;  
+  -webkit-line-clamp: 1;           
+  overflow: hidden;               
+  text-overflow: ellipsis;        
+  width: 100%;                       
+  height: auto;                    
+  line-height: 1.4; 
+  line-break: auto;
+  padding: 5px;
+}
+
+.analytic-next_header{
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.analytic-next_header:first-child{
+  border-top-left-radius: 20px;
+}
+
+.analytic-next_header:last-child{
+  border-top-right-radius: 20px;
+}
+
+.fc-toolbar-chunk{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.fc-toolbar-chunk .fc-button-group{
+  margin: 0;
+}
+
+.fc-daygrid-day-bottom a{
+  color: white;
+}
+
+.fc-daygrid-day-bottom a:hover{
+  color: #00ffae;
+}
+
+.fc-popover-header {
+  background-color: black !important;
+}
+
+.fc-popover-body {
+  background-color: #000000cf;
+}

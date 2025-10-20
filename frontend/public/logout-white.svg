@@ -1,0 +1,6 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  <!-- porta -->
+  <path d="M4 4H13C14.1046 4 15 4.89543 15 6V18C15 19.1046 14.1046 20 13 20H4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- freccia di uscita -->
+  <path d="M10 12H20M20 12L17 9M20 12L17 15" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

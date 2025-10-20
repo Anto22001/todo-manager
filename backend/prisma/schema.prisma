@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model category {
+  id    String  @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  title String  @db.VarChar
+  color String? @db.VarChar
+  todos todos[]
+}
+
+model todos {
+  id           Int       @id @default(autoincrement())
+  title        String    @db.VarChar
+  description  String
+  priority     Int       @default(0) @db.SmallInt
+  deadline     DateTime? @db.Timestamptz(6)
+  completed    Boolean   @default(false)
+  completed_at DateTime? @db.Timestamptz(6)
+  created_at   DateTime  @default(now()) @db.Timestamptz(6)
+  updated_at   DateTime  @default(now()) @db.Timestamptz(6)
+  user_id      String    @db.Uuid
+  category_id  String    @db.Uuid
+  category     category  @relation(fields: [category_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "category_id")
+  users        users     @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "user_id")
+}
+
+model users {
+  id         String   @id @db.Uuid
+  name       String   @db.VarChar
+  surname    String   @db.VarChar
+  email      String   @unique(map: "email") @db.VarChar
+  password   String   @db.VarChar
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  updated_at DateTime @default(now()) @db.Timetz(6)
+  todos      todos[]
+}
