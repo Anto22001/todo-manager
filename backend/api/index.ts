@@ -1,8 +1,8 @@
 // api/index.ts
 import fastify from 'fastify';
 import fastifyCors from '@fastify/cors';
-import routes from './routes/index.js'
-import { auth } from './middleware/auth.js';
+import routes from '../routes/index.js'
+import { auth } from '../middleware/auth.js';
 
 const app = fastify({ logger: true });
 
@@ -18,7 +18,6 @@ app.addHook('preHandler', async (request, reply) => {
 });
 
 await app.register(routes, { prefix: '/api' });
-
 await app.ready();
 
 export default async function handler(req: any, res: any) {
