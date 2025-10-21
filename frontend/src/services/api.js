@@ -2,6 +2,7 @@ import axios from "axios";
 import store from "./store";
 import { logout } from "./authSlice";
 
+console.warn("BACK_API: ", import.meta.env.VITE_BACKEND_API);
 const API = axios.create({ baseURL: `${import.meta.env.VITE_BACKEND_API}/api` });
 API.interceptors.request.use((req) => {
   const token = store.getState().auth.token;
