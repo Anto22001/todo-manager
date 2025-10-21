@@ -15,7 +15,7 @@ const server  = fastify({ logger: true });
 const start = async () => {
   try {
     await server.register(fastifyCors, {
-      origin: [process.env.FRONTEND_API || true],
+      origin: [process.env.FRONTEND_API || "http://localhost:5173"],
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
     });
     
